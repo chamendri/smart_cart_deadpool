@@ -1,0 +1,107 @@
+# SmartCart Admin Setup Examples
+# How to use the default admin user and create additional admins
+
+### Variables
+@baseUrl = http://localhost:5099/api/v1
+@adminToken = your-admin-jwt-token-here
+
+### 1. Login with Default Admin User
+# Use these credentials (configured in appsettings.json):
+# Email: admin@smartcart.com
+# Password: Admin123!
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+  "email": "admin@smartcart.com",
+  "password": "Admin123!"
+}
+
+### 2. Get Admin Profile (Verify admin access)
+GET {{baseUrl}}/users/profile
+Authorization: Bearer {{adminToken}}
+
+### 3. Create Sample Category (Test admin privileges)
+POST {{baseUrl}}/categories
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "name": "Electronics",
+  "description": "Electronic devices and accessories"
+}
+
+### 4. Create Sample Product (Test admin privileges)
+POST {{baseUrl}}/products
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "name": "iPhone 15",
+  "description": "Latest Apple smartphone",
+  "price": 999.99,
+  "stockLevel": 50,
+  "imageUrl": "/images/iphone15.jpg",
+  "categoryId": 1,
+  "isAvailable": true
+}
+
+### 5. Register Additional Admin User
+# Note: The admin/create endpoint needs to be implemented in UsersController
+# For now, you can create admin users by:
+# 1. Registering as a customer
+# 2. Manually updating the Role in the database to "Admin"
+
+# Step 5a: Register new user as customer first
+POST {{baseUrl}}/users/register
+Content-Type: application/json
+
+{
+  "email": "john.admin@smartcart.com",
+  "password": "AdminPassword123!",
+  "firstName": "John",
+  "lastName": "Admin"
+}
+
+# Step 5b: After registration, manually update the database:
+# UPDATE Users SET Role = 'Admin' WHERE Email = 'john.admin@smartcart.com';
+
+### 6. Test New Admin Login
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+  "email": "john.admin@smartcart.com",
+  "password": "AdminPassword123!"
+}
+
+## Default Admin Credentials (IMPORTANT)
+# Email: admin@smartcart.com
+# Password: Admin123!
+# 
+# ⚠️ SECURITY WARNING:
+# 1. Change the default password immediately after first login
+# 2. Consider updating the credentials in appsettings.json for production
+# 3. For production, use environment variables instead of appsettings.json
+
+## Sample Database Seeding
+# The application will automatically create:
+# - Default admin user (if no admin exists)
+# - Sample categories (in Development environment only)
+# - Sample products (in Development environment only)
+
+## Manual Admin Creation (Alternative)
+# If you need to create admin users manually in the database:
+# 
+# 1. Register user normally through API
+# 2. Update the user role in SQLite:
+#    UPDATE Users SET Role = 'Admin' WHERE Email = 'user@example.com';
+# 
+# 3. Verify by logging in and checking profile
+
+## Production Considerations
+# For production deployment:
+# 1. Change default admin credentials
+# 2. Use environment variables for sensitive config
+# 3. Implement proper admin user creation endpoint
+# 4. Add audit logging for admin actions 

@@ -29,6 +29,7 @@ builder.Services.AddDbContext<SmartCartDbContext>(options =>
 
 // Register services
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<DatabaseSeeder>();
 
 // Configure JWT Authentication
 var jwtSettings = builder.Configuration.GetSection("Jwt");
@@ -153,11 +154,11 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Ensure database is created
+// Seed database with default admin and sample data
 using (var scope = app.Services.CreateScope())
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<SmartCartDbContext>();
-    dbContext.Database.EnsureCreated();
+    var seeder = scope.ServiceProvider.GetRequiredService<DatabaseSeeder>();
+    await seeder.SeedAsync();
 }
 
 app.Run();
