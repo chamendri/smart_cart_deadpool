@@ -1,0 +1,96 @@
+[
+  {
+    "id": "d8f1e926-1be2-42f2-8688-fec44996879e",
+    "name": "Georgia Kuphal",
+    "email": "Hayley68@yahoo.com",
+    "role": "customer",
+    "address": "920 Adams Wells",
+    "orderIds": [],
+    "wishlistProductIds": []
+  },
+  {
+    "id": "32f3d9b6-528d-4d23-9574-75815b7b25ed",
+    "name": "Shawn Rau",
+    "email": "Giovanni_Gerlach@hotmail.com",
+    "role": "customer",
+    "address": "263 Shields Falls",
+    "orderIds": [],
+    "wishlistProductIds": []
+  },
+  {
+    "id": "6766d1f5-54c3-44fd-853b-b572610514d3",
+    "name": "Daniel Glover",
+    "email": "Bettye11@hotmail.com",
+    "role": "customer",
+    "address": "2263 Commerce Street",
+    "orderIds": [],
+    "wishlistProductIds": []
+  },
+  {
+    "id": "6e45f65a-fc4d-43dd-8545-2dfac67aa17b",
+    "name": "Tiffany Huel",
+    "email": "Alda_Blanda@yahoo.com",
+    "role": "customer",
+    "address": "4165 Grimes Passage",
+    "orderIds": [],
+    "wishlistProductIds": []
+  },
+  {
+    "id": "10d2bfe3-df09-40d8-8279-4af74af31149",
+    "name": "Louis Von",
+    "email": "Berniece44@yahoo.com",
+    "role": "customer",
+    "address": "67816 Aliyah Junction",
+    "orderIds": [],
+    "wishlistProductIds": []
+  },
+  {
+    "id": "038c80b1-6689-4c5e-b788-067df02d008b",
+    "name": "Ella Simonis",
+    "email": "Micaela_Turcotte@yahoo.com",
+    "role": "customer",
+    "address": "433 Franklin Road",
+    "orderIds": [],
+    "wishlistProductIds": []
+  },
+  {
+    "id": "0070be45-81ce-45c7-bac3-8679b37b9bfe",
+    "name": "Josephine Schuppe",
+    "email": "Jeanie26@yahoo.com",
+    "role": "customer",
+    "address": "114 Saige Pine",
+    "orderIds": [],
+    "wishlistProductIds": []
+  },
+  {
+    "id": "ff587c95-a4fa-47c3-82fc-82e9b9e4bfd5",
+    "name": "Tracy Hane",
+    "email": "Jerad50@gmail.com",
+    "role": "customer",
+    "address": "8291 Alene Rue",
+    "orderIds": [],
+    "wishlistProductIds": []
+  },
+  {
+    "id": "eb94b10b-1da2-4d71-b503-ef9be291a16e",
+    "name": "Oscar Witting-McKenzie",
+    "email": "Elna15@yahoo.com",
+    "role": "admin",
+    "permissions": [
+      "manage_products",
+      "manage_orders",
+      "manage_users"
+    ]
+  },
+  {
+    "id": "4dae5143-8159-44c2-93a4-e673ac212191",
+    "name": "Terry VonRueden",
+    "email": "Elmira79@hotmail.com",
+    "role": "admin",
+    "permissions": [
+      "manage_products",
+      "manage_orders",
+      "manage_users"
+    ]
+  }
+]

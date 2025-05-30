@@ -1,0 +1,331 @@
+[
+  {
+    "id": "2a3af17d-90c1-4d4a-a4da-519c3997429e",
+    "name": "Handmade Granite Cheese 0",
+    "description": "Gislason, Stroman and Fahey's most advanced Bacon technology increases harmful capabilities",
+    "price": 433.47,
+    "images": [
+      "https://picsum.photos/seed/rZ8MDr/400/400"
+    ],
+    "stock": 5,
+    "categoryIds": [
+      "234d9b77-8cd5-43d3-a37b-30c92bcca7f8"
+    ],
+    "rating": 2.7,
+    "reviewCount": 139,
+    "isActive": true
+  },
+  {
+    "id": "dd7e93e0-a385-4c53-807d-6d66f74cd157",
+    "name": "Unbranded Ceramic Chair 1",
+    "description": "Savor the moist essence in our Hat, designed for ornate culinary adventures",
+    "price": 476.35,
+    "images": [
+      "https://picsum.photos/seed/mp6wi23/400/400?grayscale&blur=10"
+    ],
+    "stock": 58,
+    "categoryIds": [
+      "efa1bc11-76c4-4839-84f7-31616d0a0d92"
+    ],
+    "rating": 2.2,
+    "reviewCount": 140,
+    "isActive": true
+  },
+  {
+    "id": "e7d92b17-e8a3-4118-8865-f3e25c79c9bc",
+    "name": "Bespoke Silk Shoes 2",
+    "description": "Innovative Tuna featuring shady technology and Cotton construction",
+    "price": 210.09,
+    "images": [
+      "https://picsum.photos/seed/rZTLogV/400/400?blur=2"
+    ],
+    "stock": 33,
+    "categoryIds": [
+      "efa1bc11-76c4-4839-84f7-31616d0a0d92",
+      "51619114-0eb3-45fa-a974-fb67bebc3dba"
+    ],
+    "rating": 2.1,
+    "reviewCount": 39,
+    "isActive": true
+  },
+  {
+    "id": "0e0ffcb4-765f-407a-af51-0430f6666d51",
+    "name": "Modern Bamboo Shirt 3",
+    "description": "The Wilhelm Sausages is the latest in a series of pale products from Stanton, Kuvalis and Ullrich",
+    "price": 470.85,
+    "images": [
+      "https://picsum.photos/seed/OZEvcEw22b/400/400?blur=6"
+    ],
+    "stock": 66,
+    "categoryIds": [
+      "c7395946-ede9-49f3-9826-2dfe4067fddf",
+      "2c92bad3-acc1-498f-b0a7-22de0ff701c9"
+    ],
+    "rating": 2.6,
+    "reviewCount": 177,
+    "isActive": true
+  },
+  {
+    "id": "e45a2169-498c-4bce-a3fc-cb75a9733db7",
+    "name": "Awesome Ceramic Car 4",
+    "description": "Innovative Chair featuring variable technology and Metal construction",
+    "price": 50.99,
+    "images": [
+      "https://picsum.photos/seed/YcXoL5J/400/400?grayscale&blur=6"
+    ],
+    "stock": 91,
+    "categoryIds": [
+      "51619114-0eb3-45fa-a974-fb67bebc3dba"
+    ],
+    "rating": 1.8,
+    "reviewCount": 156,
+    "isActive": true
+  },
+  {
+    "id": "02388099-56db-44ad-b7d4-dad82a6c7061",
+    "name": "Rustic Cotton Hat 5",
+    "description": "Experience the sky blue brilliance of our Chair, perfect for bright environments",
+    "price": 142.69,
+    "images": [
+      "https://picsum.photos/seed/cYiynm/400/400?blur=9"
+    ],
+    "stock": 75,
+    "categoryIds": [
+      "2c92bad3-acc1-498f-b0a7-22de0ff701c9",
+      "51619114-0eb3-45fa-a974-fb67bebc3dba"
+    ],
+    "rating": 5,
+    "reviewCount": 153,
+    "isActive": true
+  },
+  {
+    "id": "9ec9f725-8277-48cb-8a28-378b7fe26be1",
+    "name": "Awesome Granite Bacon 6",
+    "description": "Savor the smoky essence in our Chips, designed for joyous culinary adventures",
+    "price": 458.39,
+    "images": [
+      "https://picsum.photos/seed/QxkvQGMa0S/400/400?blur=7"
+    ],
+    "stock": 64,
+    "categoryIds": [
+      "234d9b77-8cd5-43d3-a37b-30c92bcca7f8",
+      "51619114-0eb3-45fa-a974-fb67bebc3dba"
+    ],
+    "rating": 1.3,
+    "reviewCount": 34,
+    "isActive": true
+  },
+  {
+    "id": "4feee70d-cdc4-4ffa-8936-d5c534883c18",
+    "name": "Elegant Marble Keyboard 7",
+    "description": "Introducing the Germany-inspired Cheese, blending outlandish style with local craftsmanship",
+    "price": 390.95,
+    "images": [
+      "https://picsum.photos/seed/8hXYWcyeOq/400/400?grayscale&blur=10"
+    ],
+    "stock": 74,
+    "categoryIds": [
+      "2c92bad3-acc1-498f-b0a7-22de0ff701c9",
+      "efa1bc11-76c4-4839-84f7-31616d0a0d92"
+    ],
+    "rating": 3.3,
+    "reviewCount": 183,
+    "isActive": true
+  },
+  {
+    "id": "727e9afc-9fc5-4f9e-bb7b-4acf5d0980ee",
+    "name": "Sleek Bamboo Bacon 8",
+    "description": "Innovative Pants featuring grave technology and Plastic construction",
+    "price": 381.35,
+    "images": [
+      "https://picsum.photos/seed/0BZc8SW/400/400?grayscale&blur=6"
+    ],
+    "stock": 95,
+    "categoryIds": [
+      "2c92bad3-acc1-498f-b0a7-22de0ff701c9",
+      "234d9b77-8cd5-43d3-a37b-30c92bcca7f8"
+    ],
+    "rating": 1.3,
+    "reviewCount": 176,
+    "isActive": true
+  },
+  {
+    "id": "a607d99c-7a36-42bb-a006-2eb8602d3149",
+    "name": "Tasty Rubber Hat 9",
+    "description": "Professional-grade Shirt perfect for biodegradable training and recreational use",
+    "price": 400.25,
+    "images": [
+      "https://picsum.photos/seed/vMTH6fkx/400/400?blur=1"
+    ],
+    "stock": 77,
+    "categoryIds": [
+      "2c92bad3-acc1-498f-b0a7-22de0ff701c9"
+    ],
+    "rating": 3.4,
+    "reviewCount": 138,
+    "isActive": true
+  },
+  {
+    "id": "2f0980ef-ec6a-43f2-97f9-f6953d9b5bda",
+    "name": "Refined Concrete Chips 10",
+    "description": "Featuring Manganese-enhanced technology, our Shirt offers unparalleled surprised performance",
+    "price": 115.9,
+    "images": [
+      "https://picsum.photos/seed/fsjvUH/400/400?grayscale"
+    ],
+    "stock": 92,
+    "categoryIds": [
+      "2c92bad3-acc1-498f-b0a7-22de0ff701c9"
+    ],
+    "rating": 3.5,
+    "reviewCount": 186,
+    "isActive": true
+  },
+  {
+    "id": "097ed281-a7ab-4cee-ba9d-cd2ca8e9fd70",
+    "name": "Licensed Rubber Chips 11",
+    "description": "The cyan Towels combines Zimbabwe aesthetics with Seaborgium-based durability",
+    "price": 96.69,
+    "images": [
+      "https://picsum.photos/seed/kmNJauSnBd/400/400?blur=4"
+    ],
+    "stock": 61,
+    "categoryIds": [
+      "51619114-0eb3-45fa-a974-fb67bebc3dba"
+    ],
+    "rating": 3.7,
+    "reviewCount": 166,
+    "isActive": true
+  },
+  {
+    "id": "66fc1a15-02d0-4bdf-90e1-8fe50dedc5a7",
+    "name": "Bespoke Silk Table 12",
+    "description": "Innovative Table featuring gloomy technology and Silk construction",
+    "price": 192.99,
+    "images": [
+      "https://picsum.photos/seed/AIlg6k5/400/400?blur=7"
+    ],
+    "stock": 27,
+    "categoryIds": [
+      "efa1bc11-76c4-4839-84f7-31616d0a0d92",
+      "51619114-0eb3-45fa-a974-fb67bebc3dba"
+    ],
+    "rating": 1.1,
+    "reviewCount": 179,
+    "isActive": true
+  },
+  {
+    "id": "086c1de8-4d0b-4f26-bcb4-2d16463ac06a",
+    "name": "Generic Gold Salad 13",
+    "description": "Our bear-friendly Table ensures lined comfort for your pets",
+    "price": 405.18,
+    "images": [
+      "https://picsum.photos/seed/Bl5hT/400/400?grayscale&blur=4"
+    ],
+    "stock": 25,
+    "categoryIds": [
+      "efa1bc11-76c4-4839-84f7-31616d0a0d92"
+    ],
+    "rating": 4.6,
+    "reviewCount": 136,
+    "isActive": true
+  },
+  {
+    "id": "f4faa4d0-0d5b-4739-840f-14fa558a914d",
+    "name": "Intelligent Gold Salad 14",
+    "description": "New Keyboard model with 6 GB RAM, 82 GB storage, and aware features",
+    "price": 385.99,
+    "images": [
+      "https://picsum.photos/seed/Dn6LRzU/400/400?blur=9"
+    ],
+    "stock": 9,
+    "categoryIds": [
+      "51619114-0eb3-45fa-a974-fb67bebc3dba"
+    ],
+    "rating": 5,
+    "reviewCount": 195,
+    "isActive": true
+  },
+  {
+    "id": "99ec7d55-a20a-4e96-8bbc-56fd9da78c1d",
+    "name": "Incredible Aluminum Chicken 15",
+    "description": "Our bat-friendly Shoes ensures frightened comfort for your pets",
+    "price": 43.29,
+    "images": [
+      "https://picsum.photos/seed/CYqW3L/400/400?grayscale&blur=6"
+    ],
+    "stock": 33,
+    "categoryIds": [
+      "2c92bad3-acc1-498f-b0a7-22de0ff701c9",
+      "51619114-0eb3-45fa-a974-fb67bebc3dba"
+    ],
+    "rating": 3.5,
+    "reviewCount": 112,
+    "isActive": true
+  },
+  {
+    "id": "7bed0dd4-fbc7-4d0e-a444-8aebbe6cd857",
+    "name": "Refined Cotton Soap 16",
+    "description": "The sleek and animated Shirt comes with cyan LED lighting for smart functionality",
+    "price": 340.35,
+    "images": [
+      "https://picsum.photos/seed/P5C81Rf/400/400?grayscale&blur=8"
+    ],
+    "stock": 90,
+    "categoryIds": [
+      "efa1bc11-76c4-4839-84f7-31616d0a0d92"
+    ],
+    "rating": 2.8,
+    "reviewCount": 28,
+    "isActive": true
+  },
+  {
+    "id": "6fc64346-d755-4fc4-ab0b-445b0687f483",
+    "name": "Ergonomic Concrete Fish 17",
+    "description": "Featuring Hassium-enhanced technology, our Shirt offers unparalleled hungry performance",
+    "price": 125.19,
+    "images": [
+      "https://picsum.photos/seed/ZqcZtNsb/400/400?grayscale&blur=4"
+    ],
+    "stock": 7,
+    "categoryIds": [
+      "2c92bad3-acc1-498f-b0a7-22de0ff701c9"
+    ],
+    "rating": 2.5,
+    "reviewCount": 138,
+    "isActive": true
+  },
+  {
+    "id": "5079f737-321b-43d2-82b5-a36d539d93ca",
+    "name": "Awesome Silk Chair 18",
+    "description": "Savor the sweet essence in our Car, designed for hoarse culinary adventures",
+    "price": 160.5,
+    "images": [
+      "https://picsum.photos/seed/BTNiK8s/400/400?grayscale&blur=8"
+    ],
+    "stock": 92,
+    "categoryIds": [
+      "234d9b77-8cd5-43d3-a37b-30c92bcca7f8"
+    ],
+    "rating": 2.6,
+    "reviewCount": 86,
+    "isActive": true
+  },
+  {
+    "id": "25feb572-5827-4af1-9cc0-cdaa7fe7b768",
+    "name": "Modern Concrete Ball 19",
+    "description": "Professional-grade Tuna perfect for late training and recreational use",
+    "price": 191.65,
+    "images": [
+      "https://picsum.photos/seed/qpBdi/400/400?grayscale&blur=6"
+    ],
+    "stock": 59,
+    "categoryIds": [
+      "c7395946-ede9-49f3-9826-2dfe4067fddf",
+      "51619114-0eb3-45fa-a974-fb67bebc3dba"
+    ],
+    "rating": 2.2,
+    "reviewCount": 85,
+    "isActive": true
+  }
+]
