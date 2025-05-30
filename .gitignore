@@ -6,4 +6,6 @@ Thumbs.db
 
 # Do not ignore src folder or its contents
 !src/
-!src/** 
+!src/**
+
+.vs/ 
