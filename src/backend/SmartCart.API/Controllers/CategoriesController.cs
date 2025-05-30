@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartCart.Core.Entities;
@@ -20,6 +21,7 @@ public class CategoriesController : ControllerBase
 
     // GET: api/v1/categories
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<IEnumerable<object>>> GetCategories()
     {
         try
@@ -45,6 +47,7 @@ public class CategoriesController : ControllerBase
 
     // GET: api/v1/categories/5
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public async Task<ActionResult<object>> GetCategory(int id)
     {
         try
@@ -88,6 +91,7 @@ public class CategoriesController : ControllerBase
 
     // POST: api/v1/categories (Admin only)
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<object>> CreateCategory(Category category)
     {
         try
@@ -137,6 +141,7 @@ public class CategoriesController : ControllerBase
 
     // PUT: api/v1/categories/5 (Admin only)
     [HttpPut("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> UpdateCategory(int id, Category category)
     {
         if (id != category.Id)
@@ -196,6 +201,7 @@ public class CategoriesController : ControllerBase
 
     // DELETE: api/v1/categories/5 (Admin only)
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteCategory(int id)
     {
         try
@@ -229,6 +235,7 @@ public class CategoriesController : ControllerBase
 
     // GET: api/v1/categories/5/products
     [HttpGet("{id}/products")]
+    [AllowAnonymous]
     public async Task<ActionResult<IEnumerable<object>>> GetCategoryProducts(int id)
     {
         try
