@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\smart_cart_deadpool.props" />
-</Project>

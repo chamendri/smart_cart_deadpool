@@ -1,6 +1,0 @@
-@smart_cart_deadpool_HostAddress = http://localhost:5101
-
-GET {{smart_cart_deadpool_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

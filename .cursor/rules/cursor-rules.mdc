@@ -13,6 +13,7 @@ alwaysApply: true
 - Use meaningful variable and function names.
 - Keep functions small and focused, ideally less than 50 lines of code.
 - Keep classes and modules small and focused, ideally less than 300 lines of code. If larger, try to split them into smaller classes or modules.
+- In case existing folders are to be replaced prompt to get the acceptance.
 
 ## Error handling
 
