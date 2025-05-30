@@ -1,0 +1,9 @@
+# Ignore node_modules, log files, and OS-specific files
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+
+# Do not ignore src folder or its contents
+!src/
+!src/** 
