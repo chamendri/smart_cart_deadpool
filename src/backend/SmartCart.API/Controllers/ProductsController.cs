@@ -20,13 +20,31 @@ public class ProductsController : ControllerBase
 
     // GET: api/v1/products
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
+    public async Task<ActionResult<IEnumerable<object>>> GetProducts()
     {
         try
         {
             var products = await _context.Products
-                .Include(p => p.Category)
                 .Where(p => p.IsAvailable)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Description,
+                    p.Price,
+                    p.StockLevel,
+                    p.ImageUrl,
+                    p.CategoryId,
+                    p.IsAvailable,
+                    p.CreatedAt,
+                    p.UpdatedAt,
+                    Category = new
+                    {
+                        p.Category.Id,
+                        p.Category.Name,
+                        p.Category.Description
+                    }
+                })
                 .ToListAsync();
             
             return Ok(products);
@@ -40,13 +58,32 @@ public class ProductsController : ControllerBase
 
     // GET: api/v1/products/5
     [HttpGet("{id}")]
-    public async Task<ActionResult<Product>> GetProduct(int id)
+    public async Task<ActionResult<object>> GetProduct(int id)
     {
         try
         {
             var product = await _context.Products
-                .Include(p => p.Category)
-                .FirstOrDefaultAsync(p => p.Id == id);
+                .Where(p => p.Id == id)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Description,
+                    p.Price,
+                    p.StockLevel,
+                    p.ImageUrl,
+                    p.CategoryId,
+                    p.IsAvailable,
+                    p.CreatedAt,
+                    p.UpdatedAt,
+                    Category = new
+                    {
+                        p.Category.Id,
+                        p.Category.Name,
+                        p.Category.Description
+                    }
+                })
+                .FirstOrDefaultAsync();
 
             if (product == null)
             {
@@ -64,17 +101,62 @@ public class ProductsController : ControllerBase
 
     // POST: api/v1/products (Admin only)
     [HttpPost]
-    public async Task<ActionResult<Product>> CreateProduct(Product product)
+    public async Task<ActionResult<object>> CreateProduct(Product product)
     {
         try
         {
-            product.CreatedAt = DateTime.UtcNow;
-            product.UpdatedAt = DateTime.UtcNow;
+            // Validate category exists
+            if (product.CategoryId > 0)
+            {
+                var categoryExists = await _context.Categories.AnyAsync(c => c.Id == product.CategoryId);
+                if (!categoryExists)
+                {
+                    return BadRequest("Invalid category ID");
+                }
+            }
+
+            // Create clean product entity
+            var newProduct = new Product
+            {
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.Price,
+                StockLevel = product.StockLevel,
+                ImageUrl = product.ImageUrl,
+                CategoryId = product.CategoryId,
+                IsAvailable = product.IsAvailable,
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow
+            };
             
-            _context.Products.Add(product);
+            _context.Products.Add(newProduct);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
+            // Return clean response
+            var response = await _context.Products
+                .Where(p => p.Id == newProduct.Id)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Description,
+                    p.Price,
+                    p.StockLevel,
+                    p.ImageUrl,
+                    p.CategoryId,
+                    p.IsAvailable,
+                    p.CreatedAt,
+                    p.UpdatedAt,
+                    Category = new
+                    {
+                        p.Category.Id,
+                        p.Category.Name,
+                        p.Category.Description
+                    }
+                })
+                .FirstOrDefaultAsync();
+
+            return CreatedAtAction(nameof(GetProduct), new { id = newProduct.Id }, response);
         }
         catch (Exception ex)
         {
@@ -94,8 +176,32 @@ public class ProductsController : ControllerBase
 
         try
         {
-            product.UpdatedAt = DateTime.UtcNow;
-            _context.Entry(product).State = EntityState.Modified;
+            // Validate category exists
+            if (product.CategoryId > 0)
+            {
+                var categoryExists = await _context.Categories.AnyAsync(c => c.Id == product.CategoryId);
+                if (!categoryExists)
+                {
+                    return BadRequest("Invalid category ID");
+                }
+            }
+
+            // Find existing product
+            var existingProduct = await _context.Products.FindAsync(id);
+            if (existingProduct == null)
+            {
+                return NotFound();
+            }
+
+            // Update fields
+            existingProduct.Name = product.Name;
+            existingProduct.Description = product.Description;
+            existingProduct.Price = product.Price;
+            existingProduct.StockLevel = product.StockLevel;
+            existingProduct.ImageUrl = product.ImageUrl;
+            existingProduct.CategoryId = product.CategoryId;
+            existingProduct.IsAvailable = product.IsAvailable;
+            existingProduct.UpdatedAt = DateTime.UtcNow;
             
             await _context.SaveChangesAsync();
             

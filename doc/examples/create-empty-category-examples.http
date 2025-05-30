@@ -1,0 +1,69 @@
+# SmartCart Categories API Examples
+# Demonstrating how to create categories without products
+
+### Variables
+@baseUrl = http://localhost:5099/api/v1
+@bearerToken = your-admin-jwt-token-here
+
+### Example 1: Create category with name and description
+POST {{baseUrl}}/categories
+Content-Type: application/json
+Authorization: Bearer {{bearerToken}}
+
+{
+  "name": "Books & Literature",
+  "description": "Books, magazines, and educational materials"
+}
+
+### Example 2: Create category with minimal information (name only)
+POST {{baseUrl}}/categories
+Content-Type: application/json
+Authorization: Bearer {{bearerToken}}
+
+{
+  "name": "Sports & Outdoors"
+}
+
+### Example 3: Create category with empty description
+POST {{baseUrl}}/categories
+Content-Type: application/json
+Authorization: Bearer {{bearerToken}}
+
+{
+  "name": "Home & Garden",
+  "description": ""
+}
+
+### Example 4: Create category for future use (no products initially)
+POST {{baseUrl}}/categories
+Content-Type: application/json
+Authorization: Bearer {{bearerToken}}
+
+{
+  "name": "Coming Soon",
+  "description": "Products that will be available soon"
+}
+
+### Get all categories (to see empty categories)
+GET {{baseUrl}}/categories
+
+### Get specific category (will show empty products array)
+GET {{baseUrl}}/categories/1
+
+### Get products for an empty category (will return empty array)
+GET {{baseUrl}}/categories/1/products
+
+### Update an empty category (preserves empty state)
+PUT {{baseUrl}}/categories/1
+Content-Type: application/json
+Authorization: Bearer {{bearerToken}}
+
+{
+  "id": 1,
+  "name": "Books & Educational Materials",
+  "description": "Updated description for books category"
+}
+
+### Delete an empty category (allowed since no products)
+DELETE {{baseUrl}}/categories/1
+Authorization: Bearer {{bearerToken}} 
