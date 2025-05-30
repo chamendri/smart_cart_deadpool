@@ -57,6 +57,59 @@ public class ProductsController : ControllerBase
             return StatusCode(500, "An error occurred while retrieving products");
         }
     }
+	
+	// **Navigation Features**
+	// Endpoint for keyword search functionality
+	[HttpGet("search")]
+	public IActionResult SearchProducts([FromQuery] string keyword)
+	{
+    // Example response: Filter products by keyword
+    var products = new[]
+    {
+        new { Id = 1, Name = "Product A", Price = 10.99, ImageUrl = "imageA.jpg" },
+        new { Id = 2, Name = "Product B", Price = 15.99, ImageUrl = "imageB.jpg" }
+    };
+    var filteredProducts = products.Where(p => p.Name.Contains(keyword, StringComparison.OrdinalIgnoreCase));
+    return Ok(filteredProducts);
+	}
+
+
+	// Endpoint for filtering options
+[HttpGet("filter")]
+public IActionResult FilterProducts([FromQuery] string category, [FromQuery] double? minPrice, [FromQuery] double? maxPrice)
+{
+    // Example response: Filter products by category and price range
+    var products = new[]
+    {
+        new { Id = 1, Name = "Product A", Price = 10.99, Category = "Electronics", ImageUrl = "imageA.jpg" },
+        new { Id = 2, Name = "Product B", Price = 15.99, Category = "Books", ImageUrl = "imageB.jpg" }
+    };
+    var filteredProducts = products.Where(p =>
+        (string.IsNullOrEmpty(category) || p.Category.Equals(category, StringComparison.OrdinalIgnoreCase)) &&
+        (!minPrice.HasValue || p.Price >= minPrice) &&
+        (!maxPrice.HasValue || p.Price <= maxPrice));
+    return Ok(filteredProducts);
+}
+
+	// Endpoint for sorting capabilities
+[HttpGet("sort")]
+public IActionResult SortProducts([FromQuery] string sortBy)
+{
+    // Example response: Sort products by price or category
+    var products = new[]
+    {
+        new { Id = 1, Name = "Product A", Price = 10.99, Category = "Electronics", ImageUrl = "imageA.jpg" },
+        new { Id = 2, Name = "Product B", Price = 15.99, Category = "Books", ImageUrl = "imageB.jpg" }
+    };
+        var sortedProducts = sortBy?.ToLower() switch
+        {
+            "price" => products.OrderBy(p => p.Price).ToList(),
+            "category" => products.OrderBy(p => p.Category).ToList(),
+            _ => products.ToList()
+        };
+        return Ok(sortedProducts);
+}
+
 
     // GET: api/v1/products/5
     [HttpGet("{id}")]
