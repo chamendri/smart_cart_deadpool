@@ -1,0 +1,97 @@
+# SmartCart Project Cursor Rules
+
+## Project Overview
+SmartCart is an e-commerce platform with Next.js frontend and .NET backend, using SQLite database.
+
+## Development Guidelines
+
+### Frontend Rules
+- Use Next.js 14+ with TypeScript
+- Style with Tailwind CSS only, no inline styles
+- Follow the established folder structure in src/frontend/
+- Components should be functional with hooks
+- Use proper TypeScript types for all props and state
+- Implement responsive design with mobile-first approach
+
+### Backend Rules  
+- Use .NET 7/8 with C#
+- Follow RESTful API conventions
+- All endpoints must have Swagger documentation
+- Use Entity Framework Core with Code-First approach
+- Implement proper error handling and logging
+- Use JWT for authentication
+
+### Code Standards
+- Keep functions under 50 lines
+- Keep files under 300 lines
+- Use meaningful variable and function names
+- Handle all errors and edge cases
+- Write self-documenting code
+- Add comments only when necessary for complex logic
+
+### Git Commit Rules
+- Use conventional commits (feat:, fix:, docs:, etc.)
+- Reference checklist items in commits when applicable
+- Keep commits atomic and focused
+
+### Testing Requirements
+- Write unit tests for all business logic
+- Integration tests for API endpoints
+- Frontend component tests with React Testing Library
+- Minimum 80% code coverage
+
+### Security Requirements
+- Validate all user inputs
+- Use parameterized queries (handled by EF Core)
+- Implement proper CORS policies
+- Hash passwords with bcrypt or similar
+- Use HTTPS in production
+- Sanitize data before rendering
+
+### When Working on Features
+1. Check the checklist.md for task status
+2. Update checklist when completing items
+3. Follow the architecture.md specifications
+4. Create feature branches for new work
+5. Test thoroughly before marking complete
+
+### File Naming Conventions
+- Components: PascalCase (e.g., ProductCard.tsx)
+- Utilities: camelCase (e.g., formatPrice.ts)
+- Types: PascalCase with .types.ts suffix
+- API endpoints: kebab-case routes
+- Database models: PascalCase
+
+### Required Dependencies
+Frontend:
+- next
+- react
+- typescript
+- tailwindcss
+- axios or fetch API
+- react-hook-form (for forms)
+
+Backend:
+- Microsoft.AspNetCore.App
+- Microsoft.EntityFrameworkCore.Sqlite
+- Swashbuckle.AspNetCore
+- Microsoft.AspNetCore.Authentication.JwtBearer
+
+### Checklist Integration
+- Always refer to doc/functional/checklist.md
+- Mark items complete with [x] when done
+- Add completion date in comments
+- Update progress tracking section
+- Create subtasks if needed
+
+## DO NOT
+- Use any CSS frameworks other than Tailwind
+- Create temporary files for iteration
+- Use var in JavaScript/TypeScript
+- Commit directly to main branch
+- Skip error handling
+- Ignore accessibility requirements
+- Use synchronous operations for I/O
+- Store sensitive data in frontend
+- Use inline SQL queries
+- Skip input validation 
