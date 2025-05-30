@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartCart.Core.Entities;
@@ -20,6 +21,7 @@ public class ProductsController : ControllerBase
 
     // GET: api/v1/products
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<IEnumerable<object>>> GetProducts()
     {
         try
@@ -111,6 +113,7 @@ public IActionResult SortProducts([FromQuery] string sortBy)
 
     // GET: api/v1/products/5
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public async Task<ActionResult<object>> GetProduct(int id)
     {
         try
@@ -154,6 +157,7 @@ public IActionResult SortProducts([FromQuery] string sortBy)
 
     // POST: api/v1/products (Admin only)
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<object>> CreateProduct(Product product)
     {
         try
@@ -220,6 +224,7 @@ public IActionResult SortProducts([FromQuery] string sortBy)
 
     // PUT: api/v1/products/5 (Admin only)
     [HttpPut("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> UpdateProduct(int id, Product product)
     {
         if (id != product.Id)
@@ -280,6 +285,7 @@ public IActionResult SortProducts([FromQuery] string sortBy)
 
     // DELETE: api/v1/products/5 (Admin only)
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteProduct(int id)
     {
         try

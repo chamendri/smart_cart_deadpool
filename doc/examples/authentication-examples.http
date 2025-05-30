@@ -1,0 +1,199 @@
+# SmartCart Authentication API Examples
+# Testing user registration, login, and authenticated endpoints
+
+### Variables
+@baseUrl = http://localhost:5099/api/v1
+@adminToken = your-admin-token-here
+@customerToken = your-customer-token-here
+
+### 1. User Registration (Customer)
+POST {{baseUrl}}/users/register
+Content-Type: application/json
+
+{
+  "email": "john.doe@example.com",
+  "password": "SecurePassword123",
+  "firstName": "John",
+  "lastName": "Doe",
+  "phoneNumber": "+1234567890",
+  "address": "123 Main Street",
+  "city": "New York",
+  "postalCode": "10001",
+  "country": "USA"
+}
+
+### 2. User Registration (Minimal Information)
+POST {{baseUrl}}/users/register
+Content-Type: application/json
+
+{
+  "email": "jane.smith@example.com",
+  "password": "AnotherSecurePassword123",
+  "firstName": "Jane",
+  "lastName": "Smith"
+}
+
+### 3. User Login
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+  "email": "john.doe@example.com",
+  "password": "SecurePassword123"
+}
+
+### 4. Get User Profile (Authenticated)
+GET {{baseUrl}}/users/profile
+Authorization: Bearer {{customerToken}}
+
+### 5. Create Category (Admin Required)
+POST {{baseUrl}}/categories
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "name": "Electronics",
+  "description": "Electronic devices and accessories"
+}
+
+### 6. Create Product (Admin Required)
+POST {{baseUrl}}/products
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "name": "iPhone 15",
+  "description": "Latest Apple smartphone",
+  "price": 999.99,
+  "stockLevel": 50,
+  "imageUrl": "/images/iphone15.jpg",
+  "categoryId": 1,
+  "isAvailable": true
+}
+
+### 7. Get Products (Public Access)
+GET {{baseUrl}}/products
+
+### 8. Get Categories (Public Access)
+GET {{baseUrl}}/categories
+
+### 9. Try Admin Endpoint Without Authentication (Should Fail)
+POST {{baseUrl}}/categories
+Content-Type: application/json
+
+{
+  "name": "Books",
+  "description": "Books and literature"
+}
+
+### 10. Try Admin Endpoint With Customer Token (Should Fail)
+POST {{baseUrl}}/categories
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+{
+  "name": "Books",
+  "description": "Books and literature"
+}
+
+### 11. Register Admin User (This endpoint needs to be implemented)
+POST {{baseUrl}}/users/admin/create
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "email": "admin@smartcart.com",
+  "password": "AdminPassword123",
+  "firstName": "System",
+  "lastName": "Administrator"
+}
+
+### 12. Login with Invalid Credentials (Should Fail)
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+  "email": "john.doe@example.com",
+  "password": "WrongPassword"
+}
+
+### 13. Register Duplicate Email (Should Fail)
+POST {{baseUrl}}/users/register
+Content-Type: application/json
+
+{
+  "email": "john.doe@example.com",
+  "password": "DifferentPassword123",
+  "firstName": "Another",
+  "lastName": "John"
+}
+
+### 14. Update Product (Admin Required)
+PUT {{baseUrl}}/products/1
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "id": 1,
+  "name": "iPhone 15 Pro",
+  "description": "Latest Apple smartphone with pro features",
+  "price": 1199.99,
+  "stockLevel": 30,
+  "imageUrl": "/images/iphone15pro.jpg",
+  "categoryId": 1,
+  "isAvailable": true
+}
+
+### 15. Delete Category (Admin Required)
+DELETE {{baseUrl}}/categories/1
+Authorization: Bearer {{adminToken}}
+
+## Error Testing
+
+### Invalid Email Format
+POST {{baseUrl}}/users/register
+Content-Type: application/json
+
+{
+  "email": "invalid-email",
+  "password": "SecurePassword123",
+  "firstName": "Invalid",
+  "lastName": "Email"
+}
+
+### Password Too Short
+POST {{baseUrl}}/users/register
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "123",
+  "firstName": "Short",
+  "lastName": "Password"
+}
+
+### Missing Required Fields
+POST {{baseUrl}}/users/register
+Content-Type: application/json
+
+{
+  "email": "test2@example.com",
+  "password": "SecurePassword123"
+}
+
+## JWT Token Information
+# After successful login, you'll receive a response like:
+# {
+#   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+#   "tokenType": "Bearer",
+#   "expiresAt": "2024-01-15T12:00:00Z",
+#   "user": {
+#     "id": 1,
+#     "email": "john.doe@example.com",
+#     "role": "Customer",
+#     "profile": { ... }
+#   }
+# }
+#
+# Copy the "token" value and use it in the Authorization header:
+# Authorization: Bearer YOUR_TOKEN_HERE 
